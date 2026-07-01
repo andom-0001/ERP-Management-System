@@ -102,6 +102,15 @@ function Sidebar() {
                         Invoices
                     </Link>
                 </li>
+                <li className="nav-item mb-3">
+
+                    <Link
+                        className="nav-link"
+                        to="/users"
+                    >
+                        Users
+                    </Link>
+                </li>
 
             </ul>
         </div>
