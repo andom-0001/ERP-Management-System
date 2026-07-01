@@ -84,6 +84,24 @@ function Sidebar() {
                         GRNs
                     </Link>
                 </li>
+                <li className="nav-item mb-3">
+
+                    <Link
+                        className="nav-link"
+                        to="/sales-orders"
+                    >
+                        Sales Orders
+                    </Link>
+                </li>
+                <li className="nav-item mb-3">
+
+                    <Link
+                        className="nav-link"
+                        to="/invoices"
+                    >
+                        Invoices
+                    </Link>
+                </li>
 
             </ul>
         </div>

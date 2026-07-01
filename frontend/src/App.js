@@ -18,6 +18,12 @@ import AddPurchaseOrder from "./pages/AddPurchaseOrder";
 import EditPurchaseOrder from "./pages/EditPurchaseOrder";
 import GRNs from "./pages/GRNs";
 import AddGRN from "./pages/AddGRN";
+import SalesOrders from "./pages/SalesOrders";
+import AddSalesOrder from "./pages/AddSalesOrder";
+import EditSalesOrder from "./pages/EditSalesOrder";
+import Invoices from "./pages/Invoices";
+import AddInvoice from "./pages/AddInvoice";
+import ViewInvoice from "./pages/ViewInvoice";
 import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
@@ -163,6 +169,54 @@ function App() {
                         </PrivateRoute>
                     }
                 />  
+                <Route
+                    path="/sales-orders"
+                    element={
+                        <PrivateRoute>
+                            <SalesOrders />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/sales-orders/add"
+                    element={
+                        <PrivateRoute>
+                            <AddSalesOrder />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/sales-orders/edit/:id"
+                    element={
+                        <PrivateRoute>
+                            <EditSalesOrder />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/invoices"
+                    element={
+                        <PrivateRoute>
+                            <Invoices />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/invoices/add"
+                    element={
+                        <PrivateRoute>
+                            <AddInvoice />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/invoices/view/:id"
+                    element={
+                        <PrivateRoute>
+                            <ViewInvoice />
+                        </PrivateRoute>
+                    }
+                />
 
                 <Route path="*" element={<Login />} />
 
