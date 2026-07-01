@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import API from "../api/axios";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 function ViewInvoice() {
 
@@ -37,6 +39,37 @@ function ViewInvoice() {
         return <h3 className="text-center mt-5">Loading...</h3>;
 
     }
+    const downloadPDF = () => {
+
+        const invoice = document.getElementById("invoice");
+
+        html2canvas(invoice, {
+            scale: 2
+        }).then((canvas) => {
+
+            const imgData = canvas.toDataURL("image/png");
+
+            const pdf = new jsPDF("p", "mm", "a4");
+
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+
+            const pdfHeight =
+                (canvas.height * pdfWidth) / canvas.width;
+
+            pdf.addImage(
+                imgData,
+                "PNG",
+                0,
+                0,
+                pdfWidth,
+                pdfHeight
+            );
+
+            pdf.save(`Invoice-${id}.pdf`);
+
+        });
+
+    };
 
     return (
 
@@ -54,6 +87,17 @@ function ViewInvoice() {
                     </div>
 
                     <div className="col-md-10">
+
+                        <div className="text-end mt-3">
+
+                            <button
+                                className="btn btn-primary"
+                                onClick={downloadPDF}
+                            >
+                                Download PDF
+                            </button>
+
+                        </div>
 
                         <div
                             className="card shadow mt-4 p-4"
@@ -230,13 +274,13 @@ function ViewInvoice() {
                                         className={
                                             invoice.paymentStatus === "Paid"
 
-                                            ?
+                                                ?
 
-                                            "text-success"
+                                                "text-success"
 
-                                            :
+                                                :
 
-                                            "text-danger"
+                                                "text-danger"
                                         }
                                     >
 
