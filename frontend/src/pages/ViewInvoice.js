@@ -108,13 +108,17 @@ function ViewInvoice() {
 
                                 <div>
 
-                                    <h2>ERP Inventory System</h2>
+                                    <h2>ERP Management System</h2>
 
-                                    <p>Hyderabad, India</p>
+                                    <p>ABC Technologies Pvt. Ltd.</p>
+
+                                    <p>Hyderabad, Telangana</p>
+
+                                    <p>GSTIN : 36ABCDE1234F1Z5</p>
 
                                     <p>Phone : +91 9876543210</p>
 
-                                    <p>Email : erp@example.com</p>
+                                    <p>Email : support@abcerp.com</p>
 
                                 </div>
 
