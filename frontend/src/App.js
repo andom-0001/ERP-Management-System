@@ -26,6 +26,8 @@ import AddInvoice from "./pages/AddInvoice";
 import ViewInvoice from "./pages/ViewInvoice";
 import PrivateRoute from "./components/PrivateRoute";
 import Users from "./pages/Users";
+import Reports from "./pages/Reports";
+import InventoryReport from "./pages/InventoryReport";
 
 function App() {
 
@@ -223,6 +225,22 @@ function App() {
                     element={
                         <PrivateRoute>
                             <Users />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/reports"
+                    element={
+                        <PrivateRoute>
+                            <Reports />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/reports/inventory"
+                    element={
+                        <PrivateRoute>
+                            <InventoryReport />
                         </PrivateRoute>
                     }
                 />

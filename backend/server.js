@@ -23,6 +23,7 @@ app.use("/api/grns", require("./routes/grnRoutes"));
 app.use("/api/sales-orders", require("./routes/salesOrderRoutes"));
 app.use("/api/invoices", require("./routes/invoiceRoutes"));
 app.use("/api/users", require("./routes/userManagementRoutes"));
+app.use("/api/reports", require("./routes/reportRoutes"));
 app.get("/", (req, res) => {
     res.send("ERP Inventory API Running...");
 });

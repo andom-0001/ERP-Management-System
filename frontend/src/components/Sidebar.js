@@ -111,6 +111,24 @@ function Sidebar() {
                         Users
                     </Link>
                 </li>
+                <li className="nav-item mb-3">
+
+                    <Link
+                        className="nav-link"
+                        to="/reports"
+                    >
+                        Reports
+                    </Link>
+                </li>
+                <li className="nav-item mb-3">
+
+                    <Link
+                        className="nav-link"
+                        to="/reports/inventory"
+                    >
+                        Inventory Report
+                    </Link>
+                </li>
 
             </ul>
         </div>
